@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Underdog" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700|Press+Start+2P&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <h1 class="pixelFont title">Pixel Tr<span>i</span>p</h1>
+
+        <div class="canvas-wrapper" id="canvas-wrapper">
+            <div class="head-menu">
+                <div class="hero-status">
+                    <div class="hero-health health"></div>
+                    <div class="hero-name name" id="hero-name">name pep loe</div>
+                </div>
+
+                <div class="enemy-status">
+                    <div class="enemy-health health"></div>
+                    <div class="enemy-name name" id="enemy-name">name pep loe</div>
+                </div>
+            </div>
+            <div class="foot-menu">
+                <p class="pixelFont current-level-indicator">Уровень 1</p>
+            </div>
+            <div class="sound-switcher pixelFont">Music: <span class="sound-switch-indicator">off</span></div>
+
+            <div class="start-menu">
+                <div class="center-menu">
+                    <p class="hero-name-text pixelFont">Имя героя</p>
+                    <input class="input-hero-name" id="input-name" type="text" maxlength="14">
+                    <div class="start-button pixelFont" id="button-start-game">Старт</div>
+                </div>
+                <img class="menu-background" src="./img/forest_bg_720p_bg.jpg" alt="menu-background">
+            </div>
+
+            <div class="select-magic-menu">
+                <p>Выбери вид заклинания</p>
+                <div class="magic-item-wraper">
+                    <div class="magic-item fire">
+                        <img src="./img/select_magic_menu/fire_icon.png" alt="fire">
+                        <p>Огонь</p>
+                    </div>
+                    <div class="magic-item water">
+                        <img src="./img/select_magic_menu/water_icon.png" alt="water">
+                        <p>Вода</p>
+                    </div>
+                    <div class="magic-item ice">
+                        <img src="./img/select_magic_menu/ice_icon.png" alt="ice">
+                        <p>Лёд</p>
+                    </div>
+                    <div class="magic-item heal">
+                        <img src="./img/select_magic_menu/heal_icon.png" alt="heal">
+                        <p>Лечение</p>
+                    </div>
+                    <div class="magic-item random">
+                        <img src="./img/select_magic_menu/dice_icon.png" alt="random">
+                        <p>Случайно</p>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="next-level-menu">
+                <div class="level-statistic pixelFont">
+                    Решено : 0 <br>
+                    Поражений : 0 <br>
+                    <span>-------------------</span><br>
+                    Магия огня : 0 <br>
+                    Магия воды : 0 <br>
+                    Магия льда : 0 <br>
+                    Число лечений : 0 <br>
+                    Случайная магия : 0 <br>
+                </div>
+                <div class="button-next-level pixelFont answer-button">Далее</div>
+            </div>
+
+            <div class="math-quest">
+                <div class="math-operation-wrapper">
+                    <p class="math-question pixelFont" id="math-question">a ? b = </p>
+                    <input class="input-math-answer" type="number">
+                    <div class="math-answer-button answer-button pixelFont">Ответить</div>
+                </div>
+            </div>
+
+            <div class="translate-quest">
+                <div class="translate-quest-wrapper">
+                    <p class="describe-text pixelFont">Переведи слово</p>
+                    <p class="translate-question pixelFont" id="translate-question">Cat</p>
+                    <input class="input-translate-answer" type="text">
+                    <div class="translate-answer-button answer-button pixelFont">Ответить</div>
+                </div>
+            </div>
+
+            <div class="listen-quest">
+                <div class="listen-quest-wrapper">
+                    <div class="play-sound pixelFont">Воспроизвести звук <div class="play-sound-button">></div></div>
+                    <p class="pixelFont">Введи то, что услышал</p>
+                    <input class="input-listen-answer" type="text">
+                    <div class="listen-answer-button answer-button pixelFont">Ответить</div>
+                </div>
+            </div>
+
+            <div class="dragAnddrop-quest">
+                <div class="dragAnddrop-quest-wrapper">
+                    <p class="pixelFont">Восстанови слово</p>
+                    <p class="part-word-field pixelFont" id="part-word-field">Жёлтый (на английском)</p>
+                    <ul class="drag-drop-field" id="drag-drop-field"></ul>
+                    <p class="result-word-field pixelFont"></p>
+                    <div class="buttons-wrapper">
+                        <div class="cancel-dragAnddrop-answer-button answer-button pixelFont">Отмена</div>
+                        <div class="dragAnddrop-answer-button answer-button pixelFont">Ответить</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="canvas-area" id="canvas-area"></div>
+        </div>
+
+        <section class="about-game">
+            <h2 class="pixelFont">Об игре</h2>
+            <p class="pixelFont white-lines">---------</p>
+            <p class="description-text">Вы управляете героем, который попал в тёмный лес, 
+                                        и вам нужно помочь ему выбраться оттуда. Но всё не 
+                                        так просто, его путь преграждают монстры из самых 
+                                        глубин леса, победить которых можно только при 
+                                        помощи специальных заклинаний.
+            </p>
+            <img class="center-image" src="./img/landing_page/monsters.png" alt="">
+            <p class="paperFont center-paragraph">Всего есть четыри типа магии<br>
+                + 1 комбинированный вид магии
+            </p>
+            <div class="magic-item-wraper magic-item-wraper-about">
+                <div class="magic-item">
+                    <img src="./img/select_magic_menu/fire_icon.png" alt="fire">
+                    <p class="pixelFont">Огонь</p>
+                </div>
+                <div class="magic-item">
+                    <img src="./img/select_magic_menu/water_icon.png" alt="water">
+                    <p class="pixelFont">Вода</p>
+                </div>
+                <div class="magic-item">
+                    <img src="./img/select_magic_menu/ice_icon.png" alt="ice">
+                    <p class="pixelFont">Лёд</p>
+                </div>
+                <div class="magic-item">
+                    <img src="./img/select_magic_menu/heal_icon.png" alt="heal">
+                    <p class="pixelFont">Лечение</p>
+                </div>
+                <div class="magic-item">
+                    <img src="./img/select_magic_menu/dice_icon.png" alt="random">
+                    <p class="pixelFont">Случайно</p>
+                </div>
+            </div>   
+            <p class="paperFont center-paragraph">Для каждого вида нужно применять определённые знания</p>
+            <p class="paperFont magic-description">
+                <span class="color-orange">Огонь</span> = Математика<br>
+                <span class="color-blue ">Вода</span> = Перевод английского<br>
+                <span class="color-white-blue">Лёд</span> = Аудирование<br>
+                <span class="color-green">Лечение</span> = Восстановление слов из букв<br>
+            </p>
+
+            <p class="paperFont center-paragraph">Комбинированная магия самая, сильная, но если ошибибёшься, то жди беды</p>
+            <img class="center-image" src="./img/landing_page/dice_50.png" alt="">
+
+            <h2 class="pixelFont">Скриншоты</h2>
+            <p class="pixelFont white-lines">---------</p>
+
+            <div class="gallery">
+                <img class="gallery-item" src="./img/screens/gameplay_01.jpg" />
+                <img class="gallery-item" src="./img/screens/gameplay_02.jpg" />
+                <img class="gallery-item" src="./img/screens/gameplay_03.jpg" />
+                <img class="gallery-item" src="./img/screens/gameplay_04.jpg" />
+                <img class="gallery-item" src="./img/screens/gameplay_05.jpg" />
+            </div>
+
+            <div class="gallery-frame">
+                <img class="gallery-frame-image" src="./img/screens/gameplay_04.jpg" alt="">
+                <div class="close-gallery pixelFont">Закрыть</div>
+            </div>
+
+            <h2 class="pixelFont">Автор</h2>
+            <p class="pixelFont white-lines">---------</p>
+            <p class="paperFont center-paragraph">Никита Павлович<br>Студент RollingScopes</p>
+            <div class="social-networks">
+                <a href="https://www.facebook.com/nik.pavlovich.9"><img class="social-networks-img" src="./img/landing_page/facebook.png" alt=""></a>
+                <a href="https://www.behance.net/rocotovski14e6"><img class="social-networks-img" src="./img/landing_page/behance.png" alt=""></a>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="landing-bg">
+        <img class="landing-bg-image" src="./img/landing_page/landing_bg.jpg" alt="">
+    </div>
+    
+    <script src="./dist/main.js">
+    </script>
+</body>
+</html>
